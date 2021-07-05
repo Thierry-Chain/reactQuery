@@ -19,13 +19,14 @@ code {
 
 .nav {
   background-color: rgba(53, 115, 117, 0.972) !important;
-  font-size: x-large;
   display: flex;
+  padding: 10px;
 }
 .brand {
   color: rgba(251, 103, 49, 0.89);
   text-align: center;
   margin-left: auto;
+  font-size: xx-large;
   margin-right: auto;
 }
 .main {
@@ -36,22 +37,21 @@ code {
   background-color: rgb(207, 54, 54);
 }
 .link {
-  border: 2px solid gray;
-  justify-content: center;
-  border-radius: 29%;
-  align-items: center;
+  border: 2px solid rgba(177, 70, 70, 0.829);
+  border-radius: 20%;
   text-decoration: none;
   padding: 5px 20px;
-  margin-right: auto;
-  margin-top: 3px;
-  margin-bottom: 3px;
-
-  margin-left: auto;
 }
 .link:hover {
   background-color: rgb(236, 72, 168);
+  transform: scaleY(1.2);
+  overflow: hidden;
 }
 .disp {
   background-color: rgba(43, 104, 99, 0.356);
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 2px;
 }
