@@ -1,20 +1,38 @@
-/* eslint-disable no-undef */
-//import axios from 'axios'
 import React from 'react'
 import { useQuery } from 'react-query'
-
-let getData = async () => {
-  res = await fetch('http://localhost:3000/posts')
-  res.json()
+const getData = async () => {
+  const res = await fetch(
+    `http://localhost:5000/api/student/60e44cd6a5d6420af484f287`
+  )
+  //console.log(res)
+  return res.json()
 }
 
 export default function Main() {
-  let { data, status } = useQuery('post', getData)
+  const { status, data, isError } = useQuery('posts', getData, {
+    refetchOnWindowFocus: true,
+    onSuccess: () => console.log('done')
+  })
   console.log(data)
+  const content =
+    !isError && data
+      ? data.map((dt) => {
+          return (
+            <div className="card-body" key={dt._id}>
+              <p className="card-username">Username:{dt.firstName}</p>
+              <p className="card-id">Id:dt._id{dt._id}</p>
+              <p className="card-times">Times:{dt.lend}</p>
+              <div>
+                <button>Delete</button>
+                <button>Edit</button>
+              </div>
+            </div>
+          )
+        })
+      : null
   return (
-    <React.Fragment>
-      <div className="main">Main content</div>
-      <p>status:{status}</p>
-    </React.Fragment>
+    <div className="card">
+      {status === 'loading' ? 'Please wait ..' : content}
+    </div>
   )
 }

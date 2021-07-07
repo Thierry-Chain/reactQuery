@@ -55,3 +55,30 @@ code {
   gap: 8px;
   padding: 2px;
 }
+.card {
+  background-color: rgba(219, 214, 214, 0.493);
+  display: grid;
+  gap: 5px 5px;
+  grid-template-columns: auto auto;
+  width: 100%;
+  font-size: larger;
+}
+.card-username {
+  font-weight: 600;
+  color: dodgerblue;
+}
+.card-body {
+  border: 1px solid rgba(128, 128, 128, 0.74);
+  margin: 5px;
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgba(179, 179, 179, 0.294);
+}
+.card-id {
+  font-weight: 500;
+  color: rgba(30, 173, 255, 0.753);
+}
+.card-times {
+  font-weight: 600;
+  color: rgba(126, 30, 30, 0.651);
+}

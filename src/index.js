@@ -4,12 +4,16 @@ import './index.css'
 import App from './App'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
+import { QueryClientProvider, QueryClient } from 'react-query'
 //import { BrowserRouter } from 'react-router-dom'
+let queryClient = new QueryClient()
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
