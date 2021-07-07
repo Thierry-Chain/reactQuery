@@ -3,6 +3,7 @@ import Admin from './components/Admin'
 import ErrorPage from './components/ErrorPage'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
+import Post from './components/Post'
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/admin" component={Admin} />
-        <Route exact path="/:hgd" component={ErrorPage} />
+        <Route path="/admin" component={Admin} />
+        <Route path="/post/:id" component={Post} />
+        <Route path="/:hgd" component={ErrorPage} />
       </Switch>
     </BrowserRouter>
   )

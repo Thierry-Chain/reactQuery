@@ -82,3 +82,7 @@ code {
   font-weight: 600;
   color: rgba(126, 30, 30, 0.651);
 }
+input {
+  margin: 3px;
+  padding: 3px;
+}

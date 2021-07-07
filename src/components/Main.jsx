@@ -1,5 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
+import { Link } from 'react-router-dom'
 const getData = async () => {
   const res = await fetch(
     `http://localhost:5000/api/student/60e44cd6a5d6420af484f287`
@@ -11,20 +12,26 @@ const getData = async () => {
 export default function Main() {
   const { status, data, isError } = useQuery('posts', getData, {
     refetchOnWindowFocus: true,
-    onSuccess: () => console.log('done')
+    onSuccess: (dt) => console.log(dt)
   })
-  console.log(data)
+  //console.log(data)
   const content =
     !isError && data
       ? data.map((dt) => {
           return (
             <div className="card-body" key={dt._id}>
-              <p className="card-username">Username:{dt.firstName}</p>
+              <p className="card-username">
+                Username:{dt.firstName + ' ' + dt.lastName}
+              </p>
               <p className="card-id">Id:dt._id{dt._id}</p>
               <p className="card-times">Times:{dt.lend}</p>
               <div>
-                <button>Delete</button>
-                <button>Edit</button>
+                <Link to="/delete">
+                  <button>Delete</button>
+                </Link>
+                <Link to={`/post/${dt._id}`}>
+                  <button>Edit</button>
+                </Link>
               </div>
             </div>
           )
