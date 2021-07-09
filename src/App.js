@@ -4,6 +4,7 @@ import ErrorPage from './components/ErrorPage'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
 import Post from './components/Post'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/post/:id" component={Post} />
         <Route path="/:hgd" component={ErrorPage} />
       </Switch>
+      <ReactQueryDevtools initialIsOpen={false} />
     </BrowserRouter>
   )
 }

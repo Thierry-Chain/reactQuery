@@ -86,3 +86,7 @@ input {
   margin: 3px;
   padding: 3px;
 }
+.loader {
+  margin-left: 3px;
+  color: tomato;
+}

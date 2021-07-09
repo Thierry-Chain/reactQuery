@@ -14,13 +14,16 @@ const Admin = (props) => {
   const [gender, setGender] = useState('')
   const { mutateAsync, isLoading, error } = useMutation(addPost, {
     onSuccess: (e) => {
-      console.log('object', { e })
+      console.log('success', { e })
     },
     onMutate: () => {
       console.log('muttated')
     },
     onSettled: () => {
       console.log('settled')
+    },
+    onError: (err) => {
+      console.error('error occured ', err)
     }
   })
 

@@ -6,7 +6,13 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import { QueryClientProvider, QueryClient } from 'react-query'
 //import { BrowserRouter } from 'react-router-dom'
-let queryClient = new QueryClient()
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: true
+    }
+  }
+})
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
