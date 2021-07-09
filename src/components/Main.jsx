@@ -1,15 +1,9 @@
 import React from 'react'
-import { useQuery, useMutation, QueryCache } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
 import { Link } from 'react-router-dom'
 import { deletePost } from '../api/deletePost'
 import { queryClient } from '../index'
-const getData = async () => {
-  const res = await fetch(
-    `http://localhost:5000/api/student/60e44cd6a5d6420af484f287`
-  )
-  //console.log(res)
-  return res.json()
-}
+import { getData } from '../api/getData'
 
 export default function Main() {
   const { mutateAsync } = useMutation(deletePost, {
