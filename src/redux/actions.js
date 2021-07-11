@@ -1,4 +1,9 @@
-import { CREATE_POST, DELETE_POST } from './actionTypes'
+import {
+  CREATE_POST,
+  DELETE_POST,
+  GET_DATA_DONE,
+  DELETE_POST_ERROR
+} from './actionTypes'
 
 let createNewPost = (post) => {
   return {
@@ -11,10 +16,23 @@ let createNewPost = (post) => {
   }
 }
 
-let deletePost = (id) => {
+const deletePost = (id) => {
   return {
     type: DELETE_POST,
     payload: id
   }
 }
-export { deletePost, createNewPost }
+const deletePostError = (err) => {
+  return {
+    type: DELETE_POST_ERROR,
+    payload: err
+  }
+}
+const getDataDone = (dt) => {
+  console.log('all right boss')
+  return {
+    type: GET_DATA_DONE,
+    payload: dt
+  }
+}
+export { deletePost, createNewPost, getDataDone, deletePostError }
