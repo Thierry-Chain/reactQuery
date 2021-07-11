@@ -36,6 +36,12 @@ code {
 .error {
   background-color: rgb(207, 54, 54);
 }
+.error-d {
+  background-color: rgb(243, 212, 212);
+  color: rgb(5, 47, 45);
+  margin-top: 5px;
+  padding: 2px;
+}
 .link {
   border: 2px solid rgba(177, 70, 70, 0.829);
   border-radius: 20%;

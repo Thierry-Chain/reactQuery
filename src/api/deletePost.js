@@ -1,5 +1,12 @@
 /* eslint-disable no-undef */
+//import React, { lazy } from 'react'
+
 import axios from 'axios'
+import { store } from '../redux/store'
+////lazy(async () => {
+//import { store } from '../redux/store'
+import { deletePostError } from '../redux/actions'
+//})
 export const deletePost = async (id) => {
   const config = {
     url: `http://localhost:5000/api/student/60e44cd6a5d6420af484f287/${id}`,
@@ -17,7 +24,8 @@ export const deletePost = async (id) => {
       return dt
     })
     .catch((err) => {
-      alert(err.response.data.message)
-      return err
+      // console.warn(err.response.data)
+      store.dispatch(deletePostError(err.response.data))
+      //return err
     })
 }
