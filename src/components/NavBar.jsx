@@ -23,6 +23,9 @@ export default function NavBar() {
         <Link className="link" to="/admin">
           Admin
         </Link>
+        <Link className="link" to="/graphql">
+          Graphql
+        </Link>
       </div>
     </React.Fragment>
   )

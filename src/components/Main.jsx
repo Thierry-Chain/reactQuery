@@ -61,6 +61,7 @@ export default function Main() {
         <kbd className="error-d">{deletionError}</kbd>
       ) : null}
       {status === 'loading' ? 'Please wait ..' : content}
+      {isError ? 'Error occured' : null}
     </div>
   )
 }

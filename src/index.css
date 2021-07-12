@@ -96,3 +96,7 @@ input {
   margin-left: 3px;
   color: tomato;
 }
+.box {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
