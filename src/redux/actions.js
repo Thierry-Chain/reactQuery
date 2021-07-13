@@ -2,7 +2,8 @@ import {
   CREATE_POST,
   DELETE_POST,
   GET_DATA_DONE,
-  DELETE_POST_ERROR
+  DELETE_POST_ERROR,
+  SET_SELECTED_USER
 } from './actionTypes'
 
 let createNewPost = (post) => {
@@ -35,4 +36,16 @@ const getDataDone = (dt) => {
     payload: dt
   }
 }
-export { deletePost, createNewPost, getDataDone, deletePostError }
+const setSelectedUser = (dt) => {
+  return {
+    type: SET_SELECTED_USER,
+    payload: dt
+  }
+}
+export {
+  deletePost,
+  createNewPost,
+  getDataDone,
+  deletePostError,
+  setSelectedUser
+}

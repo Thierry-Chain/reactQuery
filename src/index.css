@@ -96,3 +96,25 @@ input {
   margin-left: 3px;
   color: tomato;
 }
+.box {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.user {
+  padding: 2px;
+  background-color: rgba(209, 222, 245, 0.555);
+}
+.user_title {
+  text-align: center;
+}
+.user_body {
+  margin: 2px;
+  box-shadow: 2px 4px 2px 5px rgba(189, 197, 196, 0.301);
+}
+.user_body:hover {
+  background-color: rgb(126, 223, 223);
+  cursor: pointer;
+}
+.notAllowed {
+  cursor: not-allowed !important;
+}

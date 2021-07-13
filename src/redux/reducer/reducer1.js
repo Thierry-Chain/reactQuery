@@ -2,13 +2,15 @@ import {
   CREATE_POST,
   DELETE_POST,
   GET_DATA_DONE,
-  DELETE_POST_ERROR
+  DELETE_POST_ERROR,
+  SET_SELECTED_USER
 } from '../actionTypes'
 
 let initialState = {
   posts: [],
   errorOfDeletion: '',
-  good: 'yes'
+  good: 'yes',
+  selectedUser: null
 }
 
 function postReducer(state = initialState, action) {
@@ -36,6 +38,11 @@ function postReducer(state = initialState, action) {
       return {
         ...state,
         errorOfDeletion: action.payload
+      }
+    case SET_SELECTED_USER:
+      return {
+        ...state,
+        selectedUser: action.payload
       }
     default:
       return { ...state }
